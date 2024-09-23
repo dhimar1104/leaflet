@@ -1,20 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title size="medium" class="centered-title">IONIC-FLET</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-select [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()" placeholder="Select Basemap">
+        <ion-select-option value="satellite">Satellite</ion-select-option>
+        <ion-select-option value="streets">Streets</ion-select-option>
+        <ion-select-option value="topo">Topographic</ion-select-option>
+      </ion-select>
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="medium">IONIC-FLET</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Map Container -->
+  <div id="mapId" style="height: 90%; width: 100%; background-color: #f0f0f5;"></div>
+
+  <!-- Button Section for Show/Hide Markers -->
+  <div style="text-align: center; padding: 10px;">
+    <ion-button color="primary" (click)="showMarkers()">Show Markers</ion-button>
+    <ion-button color="danger" (click)="hideMarkers()">Hide Markers</ion-button>
   </div>
+
+  <!-- Conditional Card -->
+  <ion-card *ngIf="showCard">
+    <ion-card-header>
+      <ion-card-title>ION-FLET</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      This app utilizes the ArcGIS API to display and analyze spatial data, with the added feature of Leaflet.
+      <ion-button color="primary" expand="block" (click)="closeCard()">Tutup</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

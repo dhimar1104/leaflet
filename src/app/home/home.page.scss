@@ -1,11 +1,10 @@
 #container {
   text-align: center;
-
+  height: 100%;
+  widht: 100%;
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 #container strong {
@@ -25,3 +24,51 @@
 #container a {
   text-decoration: none;
 }
+
+.centered-title {
+  text-align: center;  // Center the text horizontally
+  flex-grow: 1;       // Allow it to take up available space between buttons
+}
+
+ion-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make the overall content padding thinner */
+ion-content {
+  padding: 0;  /* Remove default padding */
+}
+
+/* Adjust padding in the card to make it thinner */
+ion-card {
+  --padding-start: 8px;  /* Left padding */
+  --padding-end: 8px;    /* Right padding */
+  --padding-top: 8px;    /* Top padding */
+  --padding-bottom: 8px; /* Bottom padding */
+}
+
+/* Center the map container and remove unnecessary padding */
+#mapId {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Adjust the toolbar padding to make it more compact */
+ion-toolbar {
+  --padding-start: 12px;  /* Left padding */
+  --padding-end: 12px;    /* Right padding */
+  --inner-padding-end: 0; /* Remove inner padding */
+}
+
+/* For buttons inside the toolbar */
+ion-button {
+  --padding-start: 6px;  /* Button's left padding */
+  --padding-end: 6px;    /* Button's right padding */
+  --inner-padding-end: 0; /* Remove unnecessary inner padding */
+}
+
+
