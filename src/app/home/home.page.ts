@@ -10,7 +10,7 @@ export class HomePage {
 
   map!: L.Map;
   selectedBasemap: string = 'streets';  // Default basemap
-  showCard: boolean = true;
+  showCard: boolean = true;  // Card starts as visible
   basemapLayer!: L.TileLayer;  // To store the active tile layer
   markers: L.Marker[] = [];  // Array to store markers
 
